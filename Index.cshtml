@@ -1,0 +1,523 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .center {
+        flex-direction: column;
+    }
+        .text {
+            width: 50%;
+            height: auto;
+            
+        } 
+        .swiper {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .name_text {    
+            font-size: 100px;
+        }
+        .top-holder {
+            display: flex;
+            justify-content: space-evenly;
+            height: auto;
+        }
+        .PicMe {
+            width: 400px;
+            border-radius: 50px;
+            background-color: transparent;
+        }
+
+        .btnAll {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 50px;
+            left: 20px;
+            background-color: transparent;
+        }
+
+        .btnProjects {
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 200px;
+            border-radius: 50px;
+            border: none;
+            box-shadow:  10px 10px 20px #797171,
+             -10px -10px 20px rgb(255, 255, 255);
+            transition: 0.5s;
+            z-index: 1;
+            overflow: hidden;
+            text-align: center;
+            margin: 25px;
+        }
+
+        .btnProjects::before {
+            content: '';
+            width: 0;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: rgb(41, 39, 39);
+            transition: .6s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        .btnProjects p{
+            font-size: 70px;
+            background-color: transparent;
+        }
+        .btnProjects:hover {
+            background-color: rgb(41, 39, 39);
+            color: white;
+            transition: all .7s;
+        }
+        .btnProjects:hover::before {
+            width: 105%;
+        }
+
+        .btnProjects a{
+            text-decoration: none;
+            color: black;
+        }
+        .btnProjects a:hover{
+            color: white;
+        }
+
+
+        .btnDownload {
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 200px;
+            border-radius: 50px;
+            border: none;
+            box-shadow:  10px 10px 20px #797171,
+             -10px -10px 20px rgb(255, 255, 255);
+            transition: 0.5s;
+            z-index: 1;
+            overflow: hidden;
+            text-align: center;
+            margin: 25px;
+        }
+
+        .btnDownload::before {
+            content: '';
+            width: 0;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: rgb(41, 39, 39);
+            transition: .6s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        .btnDownload p{
+            font-size: 30px;
+            background-color: transparent;
+        }
+        .btnDownload:hover {
+            background-color: rgb(41, 39, 39);
+            color: white;
+            transition: all .7s;
+        }
+        .btnDownload:hover::before {
+            width: 105%;
+        }
+
+        .btnDownload a{
+            text-decoration: none;
+            color: black;
+        }
+        .btnDownload a:hover{
+            color: white;
+        }
+
+
+
+
+        .bars {
+            width: 80%;
+            height: auto;
+            min-height: 300px;
+            display: flex;
+            overflow: hidden;
+            border-radius: 50px;
+            border: none;
+            box-shadow:  10px 10px 20px #797171,
+             -10px -10px 20px rgb(255, 255, 255);
+        }
+
+        .bar {
+            width: 350px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bar h3 {
+            font-size: 2em;
+            font-weight: normal;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+
+        .bar-circle {
+            margin: 20px;
+        }
+        .skill-holder {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0px 40px 0px;
+        }
+
+        .Topskills {
+            text-align: center;
+            width: 100%;
+            font-size: 50px;
+            padding: 10px;
+            margin: 40px 0px 40px 0px;
+        }
+        .btnFind {
+            border-radius: 50px;
+            border: none;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            box-shadow:  10px 10px 20px #797171,
+             -10px -10px 20px rgb(255, 255, 255);
+            margin: 25px;
+            
+        }
+
+        .btnfinda {
+            text-decoration: none;
+            background-color: transparent;
+            color: transparent;
+        }
+
+        .btnFind p{
+            font-size: 30px;
+            background-color: transparent;
+            position: relative;
+            top: 4%;
+            z-index: 0;
+        }
+        
+        .btnFind .icon {
+            margin-right: 1em;
+            height: 3em;
+            width: 2.2em;
+            border-radius: 0.5em;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0.3em;
+            transition: all .7s;
+            z-index: 1;
+        }
+        
+        .shere {
+            width: 1.3rem;
+            height: 1.5rem;
+            margin-left: 4px;
+        }
+        
+        .btnFind:hover .icon {
+            width: calc(100% - 0.6rem);
+        }
+        
+        .btnFind:hover .shere {
+            width: calc(100% - 0.6rem);
+            display: none;
+        }
+        
+        .btnFind .icon-shere {
+            color: #f2295b;
+            width: 1.8rem;
+            height: 1.8rem;
+            margin: 5px;
+            display: none;
+        }
+        
+        .btnFind:hover .icon .icon-shere {
+            display: flex;
+        }
+
+        .btnFind::before {
+            content: '';
+            width: 0;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: rgb(41, 39, 39);
+            transition: .6s ease;
+            display: block;
+            z-index: -1;
+        }
+        .btnFind:hover {
+            background-color: rgb(41, 39, 39);
+            transition: all .7s;
+        }
+        .btnFind:hover::before {
+            width: 100%;
+        }
+
+        .show {
+            position: relative;
+            left: 10%;
+            width: 152px;
+            font-size: 30px;
+            text-decoration: none;
+            background-color: transparent;
+            color: black;
+        }
+
+        .show:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            transform-origin: bottom right;
+            transition: transform 0.4s ease-out;
+            
+        }
+        
+        .show:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .projects{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-size: 50px;
+            margin: 40px 0px 40px 0px;
+        }
+
+        .Projects {
+            width: 80%;
+            height: auto;
+            min-height: 300px;
+            display: flex;
+            overflow: hidden;
+            border-radius: 50px;
+            border: none;
+            box-shadow:  10px 10px 20px #797171,
+             -10px -10px 20px rgb(255, 255, 255);
+        }
+
+        .Pbar {
+            width: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Pbar h3 {
+            min-height: 70px;
+            font-size: 2em;
+            font-weight: normal;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+
+        .Pbar-circle {
+            display: block;
+            margin: 0.7em auto;
+        }
+@@media only screen and (max-width: 762px) {
+            .text {
+            width: 100%;
+            height: auto;
+            min-height: 1050px;
+            text-align: center;
+        } 
+
+
+
+        .name_text {    
+            font-size: 70px;
+        }
+        .top-holder {
+            display: flex;
+            justify-content: space-around;
+            height: auto;
+            flex-direction: column;
+        }
+        .PicMe {
+            width: 350px;
+            border-radius: 50px;
+            background-color: transparent;
+            margin: 10px;
+        }
+
+        .btnAll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            left: 0;
+        }
+        
+        }
+</style>
+
+    <div class="top-holder">
+        <div class="text">
+            <h1 class="name_text">Andrew Owens</h1>
+            <h2>Software Developer</h2>
+            <div class="btnAll">
+            <a href="@Url.Action("Portfolio", "Home")">
+                    <button class="btnProjects">
+                        <p>4</p><br><p style="font-size: 30px;">Projects</p>
+                    </button>
+                </a>
+
+                <a href="@Url.Action("Index", "Contact")" class="btnfinda">
+                    <button class="btnFind">
+                        <div class="icon">
+                            <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="shere">
+                                <path fill="#f2295b" d="M767.99994 585.142857q75.995429 0 129.462857 53.394286t53.394286 129.462857-53.394286 129.462857-129.462857 53.394286-129.462857-53.394286-53.394286-129.462857q0-6.875429 1.170286-19.456l-205.677714-102.838857q-52.589714 49.152-124.562286 49.152-75.995429 0-129.462857-53.394286t-53.394286-129.462857 53.394286-129.462857 129.462857-53.394286q71.972571 0 124.562286 49.152l205.677714-102.838857q-1.170286-12.580571-1.170286-19.456 0-75.995429 53.394286-129.462857t129.462857-53.394286 129.462857 53.394286 53.394286 129.462857-53.394286 129.462857-129.462857 53.394286q-71.972571 0-124.562286-49.152l-205.677714 102.838857q1.170286 12.580571 1.170286 19.456t-1.170286 19.456l205.677714 102.838857q52.589714-49.152 124.562286-49.152z"></path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram icon-shere" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram icon-shere" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp icon-shere" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                            </svg>
+                        </div>
+                        <p>Find me</p>
+                    </button>
+                </a>
+
+                <a href="~/resources/Andrew_Software_developer.pdf" download="Andrew_Software_developer.pdf">
+                    <button class="btnDownload"><p>Download Resume</p></button>
+                </a>
+            </div>
+
+        </div>
+        <img src="~/resources/Andrew_CV.jpg" class="PicMe">
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <div class="skill-holder">
+        <h2 class="Topskills">Top skills</h2>
+        <div class="swiper bars">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bar" data-percent="80">
+                    <h3>C#</h3>
+                    <canvas class="bar-circle" width="150" height="150"></canvas>
+                </div>
+                <div class="swiper-slide bar" data-percent="90">
+                    <h3>Python</h3>
+                    <canvas class="bar-circle" width="150" height="150"></canvas>
+                </div>
+                <div class="swiper-slide bar" data-percent="80">
+                    <h3>Java</h3>
+                    <canvas class="bar-circle" width="150" height="150"></canvas>
+                </div>
+                <div class="swiper-slide bar" data-percent="100">
+                    <h3>Web-dev</h3>
+                    <canvas class="bar-circle" width="150" height="150"></canvas>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <a class="show" href="About.html">Show more</a>
+
+    <div class="skill-holder">
+        <h2 class="projects">Top Projects</h2>
+        <div class="swiper Projects">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide Pbar" data-percent="60">
+                    <h3>E-Commerce Website</h3>
+                    <canvas class="Pbar-circle" width="150" height="150"></canvas>
+                </div>
+                <div class="swiper-slide Pbar" data-percent="20">
+                    <h3>Vitual Assistant</h3>
+                    <canvas class="Pbar-circle" width="150" height="150"></canvas>
+                </div>
+                <div class="swiper-slide Pbar" data-percent="70">
+                    <h3>Artists Website</h3>
+                    <canvas class="Pbar-circle" width="150" height="150"></canvas>
+                </div>
+                <div class="swiper-slide Pbar" data-percent="80">
+                    <h3>Lidar with Pi</h3>
+                    <canvas class="Pbar-circle" width="150" height="150"></canvas>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <a class="show" href="Portfolio.html">Show more</a>
+
+
+<script>
+    var swiper = new Swiper(".bars", {
+        slidesPerView: 1,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            762: {
+                slidesPerView: 4,
+            }
+        }
+    });
+</script>
+<script>
+    var swiper = new Swiper(".Projects", {
+        slidesPerView: 1,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            762: {
+                slidesPerView: 4,
+            }
+        }
+    });
+</script>
