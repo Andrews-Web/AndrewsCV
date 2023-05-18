@@ -1,0 +1,98 @@
+﻿
+<body>
+    <div class="container">
+        <ul class="navbar">
+            <li class="nav"><a href="index.html"> Home<a></li>
+            <li class="nav"><a href="About.html">About</a></li>
+            <li class="nav">
+                <a href="Portfolio.html">Portfolio</a>
+                <ul class="drop">
+                    <li><a href="Portfolio/E-Commerce.html">E-Commerce Website</a></li>
+                    <li><a href="Portfolio/Lidar.html">Lidar with Arduino</a></li>
+                    <li><a href="Portfolio/Artists.html">Artists Website</a></li>
+                    <li><a href="Portfolio/VirtualAssistant.html">Virtual Assistant</a></li>
+                </ul>
+            </li>
+            <li class="nav"><a href="Contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="Projinfo">
+        <table class="tblProj">
+            <tr>
+                <th colspan="2">Project Information</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Virtual Assistant</td>
+            </tr>
+            <tr>
+                <td>Language</td>
+                <td>Python</td>
+            </tr>
+            <tr>
+                <td>Framework</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>Amount of Hours</td>
+                <td>10hrs</td>
+            </tr>
+            <tr>
+                <td>Num. of people</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+
+    <h1 class="h1Proj">About Project</h1>
+    <p>
+        Create a Virtual Assistant from scratch. A task to test my skill in Python and I think it can be a fun task where I can learn a lot. I want to create
+        a Virtual assistant that can reply to conversation based off of internet searches or off of previous responeses I have given. The AI will need to remember
+        how to respond to questions based off of previous encounters with that question.<br>
+        The task is to create an AI that uses neural networks to find, learn and give responses to questions or tasks.
+    </p>
+
+    <h1>Planning</h1>
+    <h2>Steps to flilow</h2>
+    <p>These are steps written before the start of the project and is updated throughout the project.</p>
+    <br>
+    <ul class="steps">
+        <li>Code Voice recognition software to use microphone</li>
+        <li>Code the Text-to-speech that will type out everything the user says</li>
+        <li>Create the neural network where every word will act as a neuron</li>
+        <li>Code the program to calculate the best responses based off the probability that the response answers the question or does the task</li>
+    </ul>
+    <br>
+    <p>
+        Lets start with the study of sound and how your mic picks up that sound and is able to convert it to data.
+        A microphone records vibrations, which is converted to waves. With the study of waves we know that pitch is determined by the wavelength and frequency
+        of a wave. The shorter the wavelength, the higher the frequency and the higher the pitch. Short waves have a higher pitch and long waves have a lower pitch.
+        Amplitude is the height of the wave, the higher the amplitude the louder the sound.
+    </p>
+    <br>
+    <p>
+        When recording the sound we need to record the sound waves in an array. Every instance in the array will be one wave, one wave will be from one succesive
+        crest or where there is a pivot to another. I like to think of it as 1sin(x) graph would be one wave and one instance in the array.<br>
+        When coding the speech recognition we need to know what a sample and sample rate is. A sample is the measurement of a sound waves amplitude.
+        The sample rate is the measurement of the number of samples we take per second.
+    </p>
+    <p>
+        In order to get the sound recorded from the mic we need the following variables:
+        <ul class="steps">
+            <li>Number of channels, a channel is a representation of sound coming from or going to a single point</li>
+            <li>Sample width, the number of bytes per sample</li>
+            <li>Sample rate or frame rate, as previously explained</li>
+            <li>Number of frames, time(s) multiplied by the frame rate or the length of the array</li>
+            <li>Time, the length of the audio in seconds or Number of frame divided by framerate</li>
+        </ul>
+    </p>
+
+    <h1>Notes taken while working</h1>
+    <p>
+
+    </p>
+
+</body>
+
+

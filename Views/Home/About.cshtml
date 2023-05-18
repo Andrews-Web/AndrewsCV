@@ -1,0 +1,279 @@
+﻿<style>
+    .center {
+        display: flex;
+    }
+    .side {
+        width: 50%;
+        margin: 20px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .h2about {
+        text-align: center;
+        width: 99%;
+        margin: 20px;
+        margin-bottom: 40px;
+    }
+
+    .about {
+        width: 100%;
+        height: auto;
+        border-radius: 50px;
+        box-shadow: 10px 10px 20px #797171, -10px -10px 20px rgb(255, 255, 255);
+        font-size: 30px;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+        .about ul {
+            text-align: start;
+            padding: 20px;
+        }
+
+        .about li {
+            height: 70px;
+        }
+
+    .tblabout {
+        width: 100%;
+        min-height: 400px;
+    }
+
+        .tblabout tr {
+            margin: 20px 0px 20px 0px;
+        }
+
+        .tblabout td {
+            min-width: 200px;
+        }
+
+        .tblabout th {
+            min-width: 200px;
+        }
+
+
+    .skillbar {
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        float: left;
+    }
+
+        .skillbar h3 {
+            font-size: 1em;
+            font-weight: normal;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+    .skillbar-circle {
+        display: block;
+        margin: 0.7em auto;
+    }
+@@media only screen and (max-width: 762px) {
+    .center {
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .side {
+        width: 100%;
+        margin: 0px;
+    }    
+    .about li {
+        height: auto;
+        margin: 20px;
+    }
+    .skill {
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+    }
+    .skillbar {
+        width: 300px;
+    }
+    .abtTable {
+        overflow-x: scroll;
+    }
+    .PortfolioCard {
+        width: 95%;
+        margin: 10px;
+        padding: 15px;
+        box-shadow: 5px 5px 10px #575151, -5px -5px 10px rgb(255, 255, 255);
+    }
+    .PortfolioCard p:hover {
+        flex: 8;
+        flex-direction: column;
+    }
+    .PortfolioCard p .headspan{
+        min-width: 200px;
+    }
+    .bodyspan {
+        width: 98%;
+        margin-bottom: 20px;
+        overflow-y: scroll;
+    }
+}
+</style>
+    <div class="side">
+
+
+        <div class="about">
+            <h2 class="h2about">About me</h2>
+            <p>
+                I am currently studying Software Development, because my passion is programming. I have studied computers
+                for close to 5 years, that includes throughout highschool and my higher education studies.
+            </p><br>
+            <p>
+                I am diligent, respectful, honest, trustworthy and inquisitive
+                . My aim is to gain experience while continuing with
+                my part-time studies. I am adept in various social media platforms, office technology programs and many
+                programming languages. Committed to utilizing
+                my skills to further succeed in the workplace and in life.
+            </p><br />
+            <br />
+
+        </div>
+
+
+
+        <div class="about abtTable">
+            <h2 class="h2about">Basic Information</h2>
+            <table class="tblabout">
+
+                <tr>
+                    <td>Full Name</td>
+                    <td>Andrew Kyle Owens</td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>4 July 2002</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>Pretoria, South Africa</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>andrewkyleowens@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>082 868 0476</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="about abtTable">
+            <h2 class="h2about">Achievements</h2>
+            <table class="tblabout">
+                <tr>
+                    <th>Where I achieved</th>
+                    <th>Achievement</th>
+                </tr>
+                <tr>
+                    <td>Karate</td>
+                    <td>National Colours</td>
+                </tr>
+                <tr>
+                    <td>Swimming</td>
+                    <td>Colours</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="about">
+            <h2 class="h2about">Education</h2>
+            <p>
+                South African Certification Council Senior Certificate<br> Sutherland
+                Highschool, Pretoria<br>
+                January 2016 - December 2020<br>
+                Subjects:<br><br>
+                Engineering and Graphics Design, Computer Applications
+                Technology, Information Technology, Mathematics, Life
+                Orientation, Afrikaans, and English.
+            </p><br>
+            <p>
+                Private tertiary education, CTU training solutions, Pretoria, South
+                Africa<br>
+                July 2021 - Currently taking<br>
+                Software Development
+            </p>
+        </div>
+
+    </div>
+    <div class="side">
+
+
+        <div class="about skill">
+            <h2 class="h2about">Skills</h2>
+            <div class="skillbar" data-percent="80">
+                <h3>C#</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="90">
+                <h3>Python</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="80">
+                <h3>Java</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="100">
+                <h3>HTML</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="80">
+                <h3>CSS</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="70">
+                <h3>Javascript</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="90">
+                <h3>Adaptability</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="80">
+                <h3>Leadership</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="100">
+                <h3>Microsoft Office 365</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+            <div class="skillbar" data-percent="50">
+                <h3>BootStrap</h3>
+                <canvas class="skillbar-circle" width="150" height="150"></canvas>
+            </div>
+        </div>
+        <div class="about">
+            <h2 class="h2about">Training Courses</h2>
+            <p>
+                Leadership Academy, Sutherland High school, Pretoria, South
+                Africa<br>
+                January 2016 - December 2020<br>
+                Achieved Cum Laude Honours<br><br>
+                <ul>
+                    <li>Leadership and character-development camps</li>
+                    <li>Hikes</li>
+                    <li>Forty-hours of solitary self-reflection</li>
+                    <li>4-day residential project </li>
+                    <li>MBA Academy</li>
+                    <li>Toastmasters Youth Leadership Academy </li>
+                    <li>Self-defence academy</li>
+                    <li>Mentorship of junior learners for twelvemonths and forty-hours community service</li>
+            </p><br>
+            </ul>
+            <p>
+                First Aid<br>
+                Sutherland High school, Pretoria, South Africa<br>
+                January 2019 - December 2020<br>
+                Level 1 and 2
+            </p>
+        </div>
+    </div>

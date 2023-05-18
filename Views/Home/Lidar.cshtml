@@ -1,0 +1,96 @@
+﻿<div class="Projinfo">
+    <table class="tblProj">
+        <tr>
+            <th colspan="2">Project Information</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Lidar with arduino</td>
+        </tr>
+        <tr>
+            <td>Language</td>
+            <td>C++</td>
+        </tr>
+        <tr>
+            <td>Framework</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>Amount of Hours</td>
+            <td>14hrs</td>
+        </tr>
+        <tr>
+            <td>Num. of people</td>
+            <td>2</td>
+        </tr>
+    </table>
+</div>
+
+<h1 class="h1Proj">About Project</h1>
+<p>
+
+</p>
+<br>
+<p>
+    My father came to me with an idea on how to improve the inspections for pipelines. The project is to build and program a device that can
+    measure the distance of a pipe, while using a lidar and accelerometer to map out the pipelines. The reason why the lidar is needed is to potentially find
+    any large cracks or damage within the pipe.<br>
+    The device will need to be attached to the back of a crawler that will move down the pipe. A crawler is currently used to inspect pipelines, but it only
+    has a low qaulity camera and light attched to it. It is very hard and time consuming to spot damage in the pipe, because the footage from the camera
+    needs to be manually viewed by the worker on-site.<br>
+    The goal is to make a device that can make it easier and more productive  to inspect pipelines.
+</p>
+
+<h1>Planning</h1>
+<h2>Steps to flilow</h2>
+<p>These are steps written before the start of the project and is updated throughout the project.</p>
+<br>
+<p>
+    <ul class="steps">
+        <li>
+            Buy all equipment needed:
+            <ul style="list-style: decimal;">
+                <li>Lidar</li>
+                <li>Arduino</li>
+                <li>Accelerometer</li>
+                <li>bread board</li>
+            </ul>
+        </li>
+        <br>
+        <li>Do the wiring to connect the accelerometer to the bread board and from the bread board to the arduino</li>
+        <li>Code the arduino to get the the measuerments from the accelerometer to calculate the velocity of the the moving object</li>
+        <li>Use the velocity together with the lidar to map out the pipe</li>
+    </ul>
+</p>
+<br>
+<p>
+    We started the project with a rasberry pi, because a rasberry pi cannot work with analog values we came across an error while trying to send data
+    from the accelerometer to the pi. The accelerometer we had was an analog. The pi can only read digital values, as the GPIO pins are digital.
+    To fix this issue we used an MCP 3008 that can convert the values inherited from the accelerometer and send it to the pi
+    to display the  values and use them in the calculations.
+</p>
+<br>
+<p>
+    We came across so many issues trying to convert the data from analog to digital with the MCP that we scraped that idea and decided to use an arduino instead.
+    The arduino can input and output analog values which makes it the better option over the rasberry pi for this project.
+</p>
+<br>
+<p>
+    The accelerometer works in meters per second(m/s²).The accelerometer can measure acceleration on three different axes(x,y and z axis).
+    We need to calculate the average velocity between each rotation the lidar does. The reason we need to do this is to see how big each bump or crack is in the pipe.
+    So we trying to calculate the distance traveled between each rotation.
+    The calculations will be the following:<br>
+<p>To calculate Distance:</p>
+<br>
+<ul class="steps">
+    <li>Get acceleration from accelerometer</li>
+    <li>Get time from the time it takes for one full revolution the lidar does, this will be a constant</li>
+    <li>Final velocity = intial velocity+(acceleration*time)</li>
+    <li>Distance = Final velocity * time</li>
+</ul>
+    </p>
+<br>
+<p>
+    The accelerometer will not only be used for the calculation of distance, but also to see if the pipe has any bends, turns or if it changes its angle.
+    We need this information so when we create a 3d image of the pipe, all bends, turns and slopes will be included so it does not look like the pipe is just one straight line.
+</p>
